@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sree Sakthi Tailoring | Luxury Boutique & Designer Studio</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Glassmorphism & Lighting Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- DYNAMIC AMBIENT LIGHTING BACKGROUND CANVAS -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- FLOATING LUMINESCENT ORBS (CSS BLURRED GLOWS) -->
+  <div class="ambient-glow-sphere glow-gold"></div>
+  <div class="ambient-glow-sphere glow-purple"></div>
+  <div class="ambient-glow-sphere glow-emerald"></div>
+
+  <!-- ====================================================================
+       1. LOGIN / 3-SECOND SPLASH SCREEN
+       ==================================================================== -->
+  <div id="login-screen">
+    <div class="glass-panel login-card">
+      <!-- Luxury Tailoring Logo Emblem -->
+      <div class="brand-emblem">
+        <i class="fa-solid fa-scissors"></i>
+      </div>
+
+      <!-- Brand Name in Majestic Gold Typography -->
+      <h1 class="login-title font-brand gold-gradient-text">SREE SAKTHI TAILORING</h1>
+      <p class="login-subtitle font-brand">Haute Couture & Designer Boutique</p>
+
+      <!-- 10-Second Delay Countdown Progress Bar -->
+      <div class="delay-bar-container">
+        <div class="delay-bar-progress" id="login-progress"></div>
+      </div>
+      <p class="delay-counter-text">
+        Entering luxury studio in <span id="countdown-text">10</span>s...
+      </p>
+
+      <!-- Glass Input Fields -->
+      <div class="input-glass-group">
+        <label><i class="fa-solid fa-user-tag"></i> Customer Name / Contact (Optional)</label>
+        <input type="text" id="cust-name-input" class="input-glass" placeholder="e.g. your's name / +91 8428258938">
+      </div>
+
+      <!-- Login / Enter Button -->
+      <button id="btn-login" class="btn-gold font-brand">
+        <span>Enter Showroom</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+
+      <!-- Fast Guest Enter -->
+      <button id="btn-skip-login" class="btn-outline-glass">
+        <i class="fa-solid fa-gem"></i> Instant Guest Access
+      </button>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       2. MAIN APP CONTENT (SHOWROOM)
+       ==================================================================== -->
+  <div class="app-container" id="main-showroom">
+    
+    <!-- Top Glass Navigation Bar -->
+    <header class="glass-panel navbar">
+      <a href="#" class="nav-brand">
+        <div class="nav-logo-icon">
+          <i class="fa-solid fa-scissors"></i>
+        </div>
+        <div>
+          <h2 class="nav-title font-brand gold-gradient-text">SREE SAKTHI TAILORING</h2>
+          <span class="nav-subtitle font-brand">Custom Designer Studio</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <div class="badge-tag">
+          <span class="pulse-dot"></span>
+          <span>Order Desk Open</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero / Welcome Section -->
+    <section class="hero-section">
+      <div class="hero-pill font-brand">
+        <i class="fa-solid fa-crown"></i> Exclusive Custom Tailoring & Embroidery
+      </div>
+      <h2 class="hero-heading font-brand">
+        Royal Craftsmanship, <br>
+        <span class="gold-gradient-text">Stitched to Your Precision</span>
+      </h2>
+      <p class="hero-description">
+        Experience high-definition bespoke tailoring. Toggle between 4K high-resolution photos and video showcases for each creation, and place your order directly via WhatsApp in one click.
+      </p>
+
+      <!-- PROMINENT CENTER VIEW 5 PRODUCTS BUTTON -->
+      <div class="hero-cta-center">
+        <a href="#products-showcase" class="btn-gold btn-hero-view-products font-brand">
+          <i class="fa-solid fa-crown"></i>
+          <span>VIEW 5 PRODUCTS</span>
+          <i class="fa-solid fa-arrow-down-long"></i>
+        </a>
+      </div>
+
+      <div class="hero-highlights">
+        <div class="highlight-item">
+          <span class="icon"><i class="fa-solid fa-award"></i></span>
+          <span>100% Perfect Fit Guarantee</span>
+        </div>
+        <div class="highlight-item">
+          <span class="icon"><i class="fa-solid fa-bolt"></i></span>
+          <span>Express 48-Hour Delivery</span>
+        </div>
+        <div class="highlight-item">
+          <span class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+          <span>Heavy Aari & Maggam Artisans</span>
+        </div>
+        <div class="highlight-item">
+          <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
+          <span>Direct WhatsApp Booking</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 PRODUCTS SHOWCASE GRID -->
+    <section class="catalog-section" id="products-showcase">
+      <div class="section-header">
+        <span class="section-tag font-brand">Curated Collection</span>
+        <h3 class="section-title font-brand gold-gradient-text">Our Signature Creations</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">
+          Select between <strong>Photo</strong> and <strong>Video</strong> on any product to examine our fine stitching & embroidery details.
+        </p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- ================= PRODUCT 1 ================= -->
+        <article class="glass-panel product-card" data-product-id="1">
+          <!-- Media Showcase (Photo + Video Switcher) -->
+          <div class="media-container">
+            <span class="badge-featured font-brand">Best Seller</span>
+            
+            <div class="media-switcher">
+              <button class="media-toggle-btn active" data-type="photo">
+                <i class="fa-solid fa-image"></i> Photo
+              </button>
+              <button class="media-toggle-btn" data-type="video">
+                <i class="fa-solid fa-circle-play"></i> Video
+              </button>
+            </div>
+
+            <!-- Photo View -->
+            <img src="assets/product1.jpg" alt="Bridal Aari Work Blouse" class="product-photo active">
+            
+            <!-- Video View -->
+            <div class="product-video-wrap">
+              <video class="product-video" loop muted playsinline>
+                <source src="assets/showcase_sample.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          </div>
+
+          <!-- Product Details -->
+          <span class="product-category font-brand">Bridal Couture</span>
+          <h4 class="product-title font-serif">Royal Bridal Aari Work Blouse</h4>
+
+          <!-- Features List -->
+          <ul class="product-features">
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Intricate Handcrafted Maggam & Zardozi Zari Embroidery</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Pure Raw Silk Base with Soft Anti-Sweat Padded Lining</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Custom Deep U / Sweetheart / Designer Back Neck Cuts</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Matching Heavy Kundan Latkan & Piping Included</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Guaranteed 48-Hour Priority Express Stitching</span>
+            </li>
+          </ul>
+
+          <!-- Rate / Price -->
+          <div class="price-row">
+            <div class="price-box">
+              <span class="price-current">₹1000</span>
+              <span class="price-mrp">₹1099</span>
+            </div>
+            <span class="discount-tag">SAVE 45%</span>
+          </div>
+
+          <!-- Actions -->
+          <div class="card-actions">
+            <a href="#" class="btn-whatsapp-order btn-order-wa" 
+               data-name="Royal Bridal Aari Work Blouse" 
+               data-price="₹1000" 
+               data-id="1">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Buy Now on WhatsApp</span>
+            </a>
+            <button class="btn-quick-custom btn-open-custom" 
+                    data-product="Royal Bridal Aari Work Blouse">
+              <i class="fa-solid fa-ruler-combined"></i> Send Custom Measurements
+            </button>
+          </div>
+        </article>
+
+        <!-- ================= PRODUCT 2 ================= -->
+        <article class="glass-panel product-card" data-product-id="2">
+          <div class="media-container">
+            <span class="badge-featured font-brand" style="background: rgba(16, 185, 129, 0.85);">Designer Pick</span>
+            
+            <div class="media-switcher">
+              <button class="media-toggle-btn active" data-type="photo">
+                <i class="fa-solid fa-image"></i> Photo
+              </button>
+              <button class="media-toggle-btn" data-type="video">
+                <i class="fa-solid fa-circle-play"></i> Video
+              </button>
+            </div>
+
+            <!-- Photo View -->
+            <img src="assets/product2.jpg" alt="Designer Silk Anarkali Suit" class="product-photo active">
+            
+            <!-- Video View -->
+            <div class="product-video-wrap">
+              <video class="product-video" loop muted playsinline>
+                <source src="assets/showcase_sample.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <span class="product-category font-brand">Suits & Ethnic</span>
+          <h4 class="product-title font-serif">Blouce with your customised</h4>
+
+          <ul class="product-features">
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Heavy Resham Thread & Foil Mirror Handwork on Yoke</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Full-Flared 3.5 Meter Umbrella Cut Anarkali Silhouette</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Premium Chiffon Dupatta with Zari Lace Edging</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Custom Tailored Churidar or Flared Palazzo Bottom</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Breathable Inner Crepe Lining for All-Day Comfort</span>
+            </li>
+          </ul>
+
+          <div class="price-row">
+            <div class="price-box">
+              <span class="price-current">₹110</span>
+              <span class="price-mrp">₹5,500</span>
+            </div>
+            <span class="discount-tag">SAVE 42%</span>
+          </div>
+
+          <div class="card-actions">
+            <a href="#" class="btn-whatsapp-order btn-order-wa" 
+               data-name="Blouce" 
+               data-price="₹110" 
+               data-id="2">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Buy Now on WhatsApp</span>
+            </a>
+            <button class="btn-quick-custom btn-open-custom" 
+                    data-product="Blouce customised">
+              <i class="fa-solid fa-ruler-combined"></i> Send Custom Measurements
+            </button>
+          </div>
+        </article>
+
+        <!-- ================= PRODUCT 3 ================= -->
+        <article class="glass-panel product-card" data-product-id="3">
+          <div class="media-container">
+            <span class="badge-featured font-brand" style="background: rgba(147, 51, 234, 0.85);">Traditional</span>
+            
+            <div class="media-switcher">
+              <button class="media-toggle-btn active" data-type="photo">
+                <i class="fa-solid fa-image"></i> Photo
+              </button>
+              <button class="media-toggle-btn" data-type="video">
+                <i class="fa-solid fa-circle-play"></i> Video
+              </button>
+            </div>
+
+            <!-- Photo View -->
+            <img src="assets/product3.jpg" alt="1 Minute saree available" class="product-photo active">
+            
+            <!-- Video View -->
+            <div class="product-video-wrap">
+              <video class="product-video" loop muted playsinline>
+                <source src="assets/showcase_sample.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <span class="product-category font-brand">Kids & Traditional</span>
+          <h4 class="product-title font-serif">1minute saree available</h4>
+
+          <ul class="product-features">
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Authentic Traditional Golden Temple Zari Border</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Soft Hypoallergenic 100% Pure Cotton Inner Lining</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Classic South Indian Box Pleating with Adjustable Waist</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Contrast Blouse with Golden Piping & Puff Sleeve Cut</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon"><i class="fa-solid fa-check-circle"></i></span>
+              <span>Custom Sizes for Toddlers (1 yr) to Teens (16 yrs)</span>
+            </li>
+          </ul>
+
+          <div class="price-row">
+            <div class="price-box">
+              <span class="price-current">₹1,899</span>
+              <span class="price-mrp">₹3,200</span>
+            </div>
+            <span class="discount-tag">SAVE 40%</span>
+          </div>
+
+          <div class="card-actions">
+            <a href="#" class="btn-whatsapp-order btn-order-wa" 
+               data-name="1Mintue saree available" 
+               data-price="₹450" 
+               data-id="3">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Buy Now on WhatsApp</span>
+            </a>
+            <button class="btn-quick-custom btn-open-custom" 
+                    data-product="1mintue  saree available">
+              <i class="fa-solid fa-ruler-combined"></i> Send Custom Measurements
+            </button>
+          </div>
+        </article>
+
+    <!-- CUSTOM MEASUREMENT MODAL -->
+    <div class="modal-overlay" id="custom-modal">
+      <div class="glass-panel modal-card">
+        <button class="modal-close" id="btn-close-modal"><i class="fa-solid fa-xmark"></i></button>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h3 class="font-brand gold-gradient-text" style="font-size: 1.4rem;">Custom Size & Fit Details</h3>
+          <p id="modal-product-title" style="color: var(--gold-light); font-size: 0.9rem; font-weight: 600; margin-top: 4px;"></p>
+        </div>
+
+        <form id="measurement-form">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+            <div class="input-glass-group">
+              <label>Bust / Chest (Inches)</label>
+              <input type="text" id="meas-bust" class="input-glass" placeholder="e.g. 36">
+            </div>
+            <div class="input-glass-group">
+              <label>Waist Size (Inches)</label>
+              <input type="text" id="meas-waist" class="input-glass" placeholder="e.g. 32">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+            <div class="input-glass-group">
+              <label>Blouse/Suit Length</label>
+              <input type="text" id="meas-length" class="input-glass" placeholder="e.g. 14 or 42">
+            </div>
+            <div class="input-glass-group">
+              <label>Sleeve Length & Style</label>
+              <input type="text" id="meas-sleeves" class="input-glass" placeholder="e.g. Elbow / Sleeveless">
+            </div>
+          </div>
+
+          <div class="input-glass-group">
+            <label>Special Instructions (Neck design, latkans, etc.)</label>
+            <textarea id="meas-notes" class="input-glass" rows="3" placeholder="e.g. Deep back neck with potli buttons and heavy tassels..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-gold" style="margin-top: 10px;">
+            <i class="fa-brands fa-whatsapp"></i> Send Measurements on WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         3. FOOTER & DEVELOPER ATTRIBUTION ("Developed by - Dhiva")
+         ==================================================================== -->
+    <footer class="glass-panel site-footer">
+      <div class="footer-brand">
+        <h3 class="footer-brand-name font-brand gold-gradient-text">SREE SAKTHI TAILORING</h3>
+        <p class="footer-tagline">Bespoke Bridal Blouses • Designer Salwars • Pattu Pavadai • Gowns</p>
+      </div>
+
+      <div class="footer-features-bar">
+        <div class="footer-badge">
+          <i class="fa-solid fa-check-double" style="color: var(--gold-primary);"></i>
+          <span>Expert Master Tailors</span>
+        </div>
+        <div class="footer-badge">
+          <i class="fa-solid fa-gem" style="color: var(--gold-primary);"></i>
+          <span>Handpicked Premium Fabrics</span>
+        </div>
+        <div class="footer-badge">
+          <i class="fa-solid fa-truck-fast" style="color: var(--gold-primary);"></i>
+          <span>Doorstep Delivery & Courier</span>
+        </div>
+        <div class="footer-badge">
+          <i class="fa-solid fa-phone-volume" style="color: var(--gold-primary);"></i>
+          <span>WhatsApp Consultation</span>
+        </div>
+      </div>
+
+      <!-- Developed by - Dhiva Interactive WhatsApp Badge -->
+      <div style="margin-top: 16px;">
+        <a href="https://wa.me/919876543210?text=Hello%20Dhiva!%20I%20saw%20your%20work%20on%20Sree%20Sakthi%20Tailoring%20website%20and%20would%20like%20to%20connect." 
+           target="_blank" 
+           id="dev-whatsapp-link" 
+           class="developed-by-badge dev-clickable-wa" 
+           title="Click to Chat with Developer Dhiva on WhatsApp">
+          <i class="fa-brands fa-whatsapp dev-wa-icon"></i>
+          <span class="dev-label">Developed by -</span>
+          <span class="dev-name font-brand gold-shimmer-text">Dhiva</span>
+          <span class="dev-wa-pill"><i class="fa-solid fa-paper-plane"></i> WhatsApp DM</span>
+        </a>
+        <p style="font-size: 0.76rem; color: var(--text-muted); margin-top: 12px;">
+          © 2026 Sree Sakthi Tailoring. All rights reserved. Crafted with Ultra-Glassmorphism UI.
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ====================================================================
+       4. COMPACT FLOATING WHATSAPP DM (BOTTOM RIGHT CORNER)
+       ==================================================================== -->
+  <div class="floating-whatsapp-widget" id="floating-whatsapp">
+    
+    <!-- Mini Chat Card Popup -->
+    <div class="whatsapp-chat-popup" id="whatsapp-popup">
+      <div class="popup-header">
+        <div class="popup-avatar">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <div class="popup-info">
+          <h5>Dhiva | Developer & Support</h5>
+          <p>● Active Now</p>
+        </div>
+      </div>
+      <p class="popup-message">
+        Vanakkam! Need tailoring orders or website inquiries? DM me directly on WhatsApp!
+      </p>
+      <a href="https://wa.me/919876543210?text=Hello%20Dhiva!%20I%20am%20contacting%20you%20from%20Sree%20Sakthi%20Tailoring%20website." 
+         target="_blank" 
+         class="btn-popup-dm" 
+         id="btn-popup-send">
+        <i class="fa-brands fa-whatsapp"></i> Start WhatsApp DM
+      </a>
+    </div>
+
+    <!-- Circular Pulsating WhatsApp Floating Button -->
+    <button class="whatsapp-trigger-btn" id="btn-floating-whatsapp" title="WhatsApp DM">
+      <div class="whatsapp-ping-ring"></div>
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="whatsapp-badge-online"></span>
+      <span class="whatsapp-tooltip">WhatsApp DM (Dhiva)</span>
+    </button>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
